@@ -1,3 +1,10 @@
+<%-- 
+    Document   : PaymentInqury
+    Created on : Sep 13, 2017, 11:02:29 AM
+    Author     : fcoskun
+    Refactored : oaksoy, Oct 11, 2017
+--%>
+
 <%@page import="com.google.gson.Gson"%>
 <%@page import="java.util.UUID"%>
 <%@page import="java.io.PrintWriter"%>
@@ -7,7 +14,6 @@
 
 <jsp:include page="layout.jsp"/>
 
- 
 <fieldset>
     <legend><label style="font-weight:bold;width:250px;">Sepet Bilgileri</label></legend>
     <table class="table">
@@ -56,12 +62,10 @@
                     50.00 TL
                 </td>
             </tr>
-
             <tr>
                 <td colspan="3">
                     Toplam Tutar
                 </td>
-
                 <td>
                     100.00 TL
                 </td>
@@ -95,49 +99,35 @@
 </fieldset>
 <form action="" method="post" class="form-horizontal">
     <fieldset>
-
         <!-- Form Name -->
         <legend><label style="font-weight:bold;width:250px;">Kart Bilgileriyle Ödeme</label></legend>
-
-
         <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="">Kart Sahibi Adı Soyadı:</label>
             <div class="col-md-4">
                 <input value="Fatih Coskun" name="nameSurname" class="form-control input-md">
-
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-4 control-label" for="">  Kart Numarası:</label>
             <div class="col-md-4">
                 <input value="4282209027132016" name="cardNumber" class="form-control input-md">
-
             </div>
         </div>
-
         <div class="form-group">
             <label class="col-md-4 control-label" for="">  Son Kullanma Tarihi Ay/Yıl: </label>
             <div class="col-md-4">
                 <input value="05" name="month" class="form-control input-md" width="50px">
                 <input value="18" name="year" class="form-control input-md" width="50px">
-
             </div>
         </div>
-
         <div class="form-group">
             <label class="col-md-4 control-label" for="">  CVC: </label>
             <div class="col-md-4">
                 <input value="000" name="cvc" class="form-control input-md">
-
             </div>
         </div>
-
-
     </fieldset>
-
-   
-
     Taksit Sayısı
     <select name="installment">
         <option value="1">1</option>
@@ -153,7 +143,6 @@
         <option value="11">11</option>
         <option value="12">12</option>
     </select>
-
     <!-- Button -->
     <div class="form-group">
         <label class="col-md-4 control-label" for=""></label>
@@ -162,57 +151,54 @@
         </div>
     </div>
 </form>
-
-
-
 <br/>
 
 <%
-        request.setCharacterEncoding("UTF-8");
-if ("POST".equalsIgnoreCase(request.getMethod())) {
-   
+
+    request.setCharacterEncoding("UTF-8");
+
+    if ("POST".equalsIgnoreCase(request.getMethod())) {
+
         Settings settings = new Settings();
-            
-                  settings.PublicKey =  ""; //"Public Magaza Anahtarı - size mağaza başvurunuz sonucunda gönderilen publik key (açık anahtar) bilgisini kullanınız.",
-              settings.PrivateKey = ""; //"Private Magaza Anahtarı  - size mağaza başvurunuz sonucunda gönderilen privaye key (gizli anahtar) bilgisini kullanınız.",
-               settings.BaseUrl = "https://entegrasyon.ipara.com/3dgate";
-                 settings.Version = "1.0";// Kullandığınız iPara API versiyonudur. 
-            settings.Mode = "T";  // Test -> T, entegrasyon testlerinin sırasında "T" modunu, canlı sisteme entegre olarak ödeme almaya başlamak için ise Prod -> "P" modunu kullanınız.
-            settings.HashString=""; // Kullanacağınız hash bilgisini, bağlanmak istediğiniz web servis bilgisine göre doldurulmalıdır. Bu bilgileri Entegrasyon rehberinin ilgili web servise ait bölümde bulabilirsiniz.
-      
-            ThreeDPaymentInitRequest initRequest = new ThreeDPaymentInitRequest();
-            UUID uuid = UUID.randomUUID();
 
-            initRequest.OrderId = uuid.toString();
-            initRequest.echo = "Echo";
-            initRequest.mode = settings.Mode;
-            initRequest.Version = settings.Version;
-            initRequest.Amount = "10000"; // 100 tL
-            initRequest.CardOwnerName = request.getParameter("nameSurname");
-            initRequest.CardNumber = request.getParameter("cardNumber");
-            initRequest.CardExpireMonth = request.getParameter("month");
-            initRequest.CardExpireYear = request.getParameter("year");
-            initRequest.Installment = request.getParameter("installment");
-            initRequest.Cvc = request.getParameter("cvc");
-            initRequest.CardId = "";
-            initRequest.UserId = "";
+        settings.publicKey = ""; //"Public Magaza Anahtarı - size mağaza başvurunuz sonucunda gönderilen publik key (açık anahtar) bilgisini kullanınız.",
+        settings.privateKey = ""; //"Private Magaza Anahtarı  - size mağaza başvurunuz sonucunda gönderilen privaye key (gizli anahtar) bilgisini kullanınız.",
+        settings.baseUrl = "https://entegrasyon.ipara.com/3dgate";
+        settings.version = "1.0";// Kullandığınız iPara API versiyonudur. 
+        settings.mode = "T";  // Test -> T, entegrasyon testlerinin sırasında "T" modunu, canlı sisteme entegre olarak ödeme almaya başlamak için ise Prod -> "P" modunu kullanınız.
+        settings.hashString = ""; // Kullanacağınız hash bilgisini, bağlanmak istediğiniz web servis bilgisine göre doldurulmalıdır. Bu bilgileri Entegrasyon rehberinin ilgili web servise ait bölümde bulabilirsiniz.
 
+        ThreeDPaymentInitRequest initRequest = new ThreeDPaymentInitRequest();
+        UUID uuid = UUID.randomUUID();
 
-            initRequest.PurchaserName = "Murat";
-            initRequest.PurchaserSurname = "Kaya";
-            initRequest.PurchaserEmail = "murat@kaya.com";
+        initRequest.orderId = uuid.toString();
+        initRequest.echo = "Echo";
+        initRequest.mode = settings.mode;
+        initRequest.version = settings.version;
+        initRequest.amount = "10000"; // 100 TL
+        initRequest.cardOwnerName = request.getParameter("nameSurname");
+        initRequest.cardNumber = request.getParameter("cardNumber");
+        initRequest.cardExpireMonth = request.getParameter("month");
+        initRequest.cardExpireYear = request.getParameter("year");
+        initRequest.installment = request.getParameter("installment");
+        initRequest.cvc = request.getParameter("cvc");
+        initRequest.cardId = "";
+        initRequest.userId = "";
 
-            String url = request.getRequestURL().toString();
-            String baseURL = url.substring(0, url.length() - request.getRequestURI().length()) + request.getContextPath() + "/";
-            
-            initRequest.SuccessUrl = baseURL +"ThreeDResultSuccess.htm";
-            initRequest.FailUrl = baseURL+"ThreeDResultFail.htm";
-             String form = ThreeDPaymentInitRequest.Execute(initRequest, settings);
-            out.println(form); 
-            
-}
+        initRequest.purchaserName = "Murat";
+        initRequest.purchaserSurname = "Kaya";
+        initRequest.purchaserEmail = "murat@kaya.com";
+
+        String url = request.getRequestURL().toString();
+        String baseURL = url.substring(0, url.length() - request.getRequestURI().length()) + request.getContextPath() + "/";
+
+        initRequest.successUrl = baseURL + "ThreeDResultSuccess.htm";
+        initRequest.failUrl = baseURL + "ThreeDResultFail.htm";
+        String form = ThreeDPaymentInitRequest.execute(initRequest, settings);
+        out.println(form);
+
+    }
+
 %>
 
-         
 <jsp:include page="footer.jsp"/>
-      

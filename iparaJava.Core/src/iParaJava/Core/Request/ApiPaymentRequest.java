@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package iParaJava.Core.Request;
 
 import iParaJava.Core.*;
@@ -12,62 +7,77 @@ import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
- *
  * @author fcoskun
+ * @refactoredby oaksoy
  */
-    @XmlRootElement( name="auth")
-public class ApiPaymentRequest extends BaseRequest  {
-        
-     @XmlElement(name="threeD")
-        public String ThreeD ;
+@XmlRootElement(name = "auth")
+public class ApiPaymentRequest extends BaseRequest {
 
-       @XmlElement(name="orderId")
-        public String OrderId ;
+    @XmlElement(name = "threeD")
+    public String threeD;
 
-       @XmlElement(name="amount")
-        public String Amount ;
+    @XmlElement(name = "orderId")
+    public String orderId;
 
+    @XmlElement(name = "amount")
+    public String amount;
 
-       @XmlElement(name="cardOwnerName")
-        public String CardOwnerName ;
+    @XmlElement(name = "cardOwnerName")
+    public String cardOwnerName;
 
-       @XmlElement(name="cardNumber")
-        public String CardNumber ;
+    @XmlElement(name = "cardNumber")
+    public String cardNumber;
 
-       @XmlElement(name="cardExpireMonth")
-        public String CardExpireMonth ;
+    @XmlElement(name = "cardExpireMonth")
+    public String cardExpireMonth;
 
-       @XmlElement(name="cardExpireYear")
-        public String CardExpireYear ;
+    @XmlElement(name = "cardExpireYear")
+    public String cardExpireYear;
 
-       @XmlElement(name="installment")
-        public String Installment ;
+    @XmlElement(name = "installment")
+    public String installment;
 
-       @XmlElement(name="cardCvc")
-        public String Cvc ;
+    @XmlElement(name = "cardCvc")
+    public String cvc;
 
+    @XmlElement(name = "vendorId")
+    public String vendorId;
 
-       @XmlElement(name="vendorId")
-        public String VendorId ;
-       @XmlElement(name="userId")
-        public String UserId ;
-       @XmlElement(name="cardId")
-        public String CardId ;
+    @XmlElement(name = "userId")
+    public String userId;
 
-       @XmlElement(name="threeDSecureCode")
-        public String ThreeDSecureCode ;
+    @XmlElement(name = "cardId")
+    public String cardId;
 
-        @XmlElementWrapper(name="products")
-        public List<Product> product ;
+    @XmlElement(name = "threeDSecureCode")
+    public String threeDSecureCode;
 
-       @XmlElement(name="purchaser")
-        public Purchaser Purchaser ;
-       
-        public static ApiPaymentResponse Execute(ApiPaymentRequest request, Settings settings) throws Exception
-        {
-            settings.transactionDate = Helper.GetTransactionDateString();
-            settings.HashString = settings.PrivateKey + request.OrderId + request.Amount + request.mode + request.CardOwnerName + request.CardNumber + request.CardExpireMonth + request.CardExpireYear + request.Cvc + request.UserId + request.CardId+ request.Purchaser.Name + request.Purchaser.SurName + request.Purchaser.Email + settings.transactionDate;
-            return RestHttpCaller.Create().PostXML(settings.BaseUrl + "rest/payment/auth", Helper.GetHttpHeaders(settings, Helper.application_xml), request,ApiPaymentResponse.class);
-        }
-    
+    @XmlElementWrapper(name = "products")
+    public List<Product> products;
+
+    @XmlElement(name = "purchaser")
+    public Purchaser purchaser;
+
+    public static ApiPaymentResponse execute(ApiPaymentRequest request, Settings settings) throws Exception {
+        settings.transactionDate = Helper.getTransactionDateString();
+        settings.hashString = settings.privateKey
+                + request.orderId
+                + request.amount
+                + request.mode
+                + request.cardOwnerName
+                + request.cardNumber
+                + request.cardExpireMonth
+                + request.cardExpireYear
+                + request.cvc
+                + request.userId
+                + request.cardId
+                + request.purchaser.name
+                + request.purchaser.surname
+                + request.purchaser.email
+                + settings.transactionDate;
+        return RestHttpCaller.getInstance().postXML(settings.baseUrl + "rest/payment/auth",
+                Helper.getHttpHeaders(settings, Constants.ContentTypes.APPLICATION_XML_UTF8),
+                request, ApiPaymentResponse.class);
+    }
+
 }

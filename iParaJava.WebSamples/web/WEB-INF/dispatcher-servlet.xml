@@ -1,5 +1,4 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
@@ -19,21 +18,17 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-              <prop key="index.htm">indexController</prop>
-              <prop key="test.htm">testController</prop>
-              <prop key="ThreeDResultFail.htm">threeDResultFailController</prop>
-              <prop key="ThreeDResultSuccess.htm">threeDResultSuccessController</prop>
-              <prop key="binInquiry.htm">binInquiryController</prop>
-              <prop key="ApiPayment.htm">ApiPaymentController</prop>
-              <prop key="PaymentInqury.htm">PaymentInquryController</prop>
-              
-              <prop key="AddCardToWallet.htm">AddCardToWalletController</prop>
-              <prop key="GetCardFromWallet.htm">GetCardFromWalletController</prop>
-              <prop key="DeleteCardFromWallet.htm">DeleteCardFromWalletController</prop>
-              <prop key="ApiPaymentWithWallet.htm">ApiPaymentWithWalletController</prop>
-              
-              
-   
+                <prop key="index.htm">indexController</prop>
+                <prop key="test.htm">testController</prop>
+                <prop key="ThreeDResultFail.htm">threeDResultFailController</prop>
+                <prop key="ThreeDResultSuccess.htm">threeDResultSuccessController</prop>
+                <prop key="binInquiry.htm">binInquiryController</prop>
+                <prop key="ApiPayment.htm">ApiPaymentController</prop>
+                <prop key="PaymentInqury.htm">PaymentInquryController</prop>
+                <prop key="AddCardToWallet.htm">AddCardToWalletController</prop>
+                <prop key="GetCardFromWallet.htm">GetCardFromWalletController</prop>
+                <prop key="DeleteCardFromWallet.htm">DeleteCardFromWalletController</prop>
+                <prop key="ApiPaymentWithWallet.htm">ApiPaymentWithWalletController</prop>
             </props>
         </property>
     </bean>
@@ -46,47 +41,47 @@
     <!--
     The index controller.
     -->
-          <bean name="indexController"
+    <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
     
-          <bean name="testController"
+    <bean name="testController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="test" />  
           
-          <bean name="threeDResultFailController"
+    <bean name="threeDResultFailController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="threeDResultFail" />  
           
-          <bean name="threeDResultSuccessController"
+    <bean name="threeDResultSuccessController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="threeDResultSuccess" />   
           
-          <bean name="binInquiryController"
+    <bean name="binInquiryController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="binInquiry" />   
           
-          <bean name="ApiPaymentController"
+    <bean name="ApiPaymentController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="ApiPayment" />
           
-          <bean name="PaymentInquryController"
+    <bean name="PaymentInquryController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="PaymentInqury" />
           
-<bean name="AddCardToWalletController"
+    <bean name="AddCardToWalletController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="AddCardToWallet" />
 
-<bean name="GetCardFromWalletController"
+    <bean name="GetCardFromWalletController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="GetCardFromWallet" />
 
-<bean name="DeleteCardFromWalletController"
+    <bean name="DeleteCardFromWalletController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="DeleteCardFromWallet" />
 
-<bean name="ApiPaymentWithWalletController"
+    <bean name="ApiPaymentWithWalletController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="ApiPaymentWithWallet" />
 

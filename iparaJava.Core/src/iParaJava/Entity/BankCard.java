@@ -1,36 +1,35 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package iParaJava.Entity;
 
 import java.util.List;
 
 /**
- *
  * @author fcoskun
+ * @refactoredby oaksoy
  */
 public class BankCard {
-    
-      public String cardId ;
 
-        public String maskNumber ;
+    public String cardId;
 
-        public String alias ;
+    public String maskNumber;
 
-        public String bankId ;
+    public String alias;
 
-        public String bankName ;
+    public String bankId;
 
-        public String cardFamilyName ;
+    public String bankName;
 
-        public String supportsInstallment ;
-        public List<String> supportedInstallments ;
-        public String type ;
+    public String cardFamilyName;
 
-        public String serviceProvider ;
+    public String supportsInstallment;
 
-        public String threeDSecureMandatory ;
-        public String cvcMandatory ;
+    public List<String> supportedInstallments;
+
+    public String type;
+
+    public String serviceProvider;
+
+    public String threeDSecureMandatory;
+
+    public String cvcMandatory;
+
 }

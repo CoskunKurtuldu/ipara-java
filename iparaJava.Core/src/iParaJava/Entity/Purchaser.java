@@ -1,44 +1,39 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package iParaJava.Entity;
 
 import javax.xml.bind.annotation.*;
 
 /**
- *
  * @author fcoskun
+ * @refactoredby oaksoy
  */
-@XmlRootElement(name="purchaser")
+@XmlRootElement(name = "purchaser")
 public class Purchaser {
-         @XmlElement(name="name")
-        public String Name ;
 
-          @XmlElement(name="surname")
-        public String SurName ;
+    @XmlElement(name = "name")
+    public String name;
 
-          @XmlElement(name="birthDate")
-        public String BirthDate ;
+    @XmlElement(name = "surname")
+    public String surname;
 
-          @XmlElement(name="email")
-        public String Email ;
+    @XmlElement(name = "birthDate")
+    public String birthDate;
 
-          @XmlElement(name="gsmNumber")
-        public String GsmPhone ;
+    @XmlElement(name = "email")
+    public String email;
 
-          @XmlElement(name="tcCertificate")
-        public String IdentityNumber ;
+    @XmlElement(name = "gsmNumber")
+    public String gsmNumber;
 
-          @XmlElement(name="clientIp")
-        public String ClientIp ;
+    @XmlElement(name = "tcCertificate")
+    public String tcCertificate;
 
-          @XmlElement(name="invoiceAddress")
-        public PurchaserAddress InvoiceAddress ;
+    @XmlElement(name = "clientIp")
+    public String clientIp;
 
-          @XmlElement(name="shippingAddress")
-        public PurchaserAddress ShippingAddress ;
+    @XmlElement(name = "invoiceAddress")
+    public PurchaserAddress invoiceAddress;
 
-                
+    @XmlElement(name = "shippingAddress")
+    public PurchaserAddress shippingAddress;
+
 }

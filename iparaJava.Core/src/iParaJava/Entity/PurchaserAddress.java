@@ -1,51 +1,44 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package iParaJava.Entity;
 
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
 
 /**
- *
  * @author fcoskun
+ * @refactoredby oaksoy
  */
 public class PurchaserAddress {
-       
-        @XmlElement(name="name")
-        public String Name ;
 
-        
-        @XmlElement(name="surname")
-        public String SurName ;
+    @XmlElement(name = "name")
+    public String name;
 
-          
-        @XmlElement(name="address")
-        public String Address ;
+    @XmlElement(name = "surname")
+    public String surname;
 
-          @XmlElement(name="zipcode")
-        public String ZipCode ;
+    @XmlElement(name = "address")
+    public String address;
 
-          @XmlElement(name="city")        
-        public String CityCode ;
-                
-          @XmlElement(name="tcCertificate")
-        public String IdentityNumber ;
+    @XmlElement(name = "zipcode")
+    public String zipcode;
 
-          @XmlElement(name="country")
-        public String CountryCode ;
-        
-          @XmlElement(name="taxNumber")
-        public String TaxNumber ;
-               
-          @XmlElement(name="taxOffice")
-        public String TaxOffice ;
-        
-          @XmlElement(name="companyName")
-        public String CompanyName ;
+    @XmlElement(name = "city")
+    public String city;
 
-          @XmlElement(name="phoneNumber")
-        public String PhoneNumber ;
+    @XmlElement(name = "tcCertificate")
+    public String tcCertificate;
+
+    @XmlElement(name = "country")
+    public String country;
+
+    @XmlElement(name = "taxNumber")
+    public String taxNumber;
+
+    @XmlElement(name = "taxOffice")
+    public String taxOffice;
+
+    @XmlElement(name = "companyName")
+    public String companyName;
+
+    @XmlElement(name = "phoneNumber")
+    public String phoneNumber;
+
 }

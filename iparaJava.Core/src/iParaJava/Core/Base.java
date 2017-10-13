@@ -1,22 +1,15 @@
-
-        /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author fcoskun
- */
-
-
 package iParaJava.Core;
 
- public abstract class  Base
-    {
-     
-    }
-   
- 
-  
+/**
+ * This project is for exemplifying the integration to iPara Services. Thus,
+ * this project is not meant to be extended to a larger integration, yet it can
+ * be used as a schema to uphold while the integration effort.
+ *
+ * Please refer to @link<http://dev.ipara.com.tr/> for further details for
+ * extensive use of sample codes.
+ *
+ * @author fcoskun
+ * @refactoredby oaksoy
+ */
+public abstract class Base {
+}

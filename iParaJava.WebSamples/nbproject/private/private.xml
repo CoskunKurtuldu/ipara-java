@@ -15,5 +15,8 @@
             <file>file:/C:/Git/iPara/ipara-java/iParaJava.WebSamples/web/WEB-INF/jsp/index.jsp</file>
             <file>file:/C:/Git/iPara/ipara-java/iParaJava.WebSamples/web/WEB-INF/jsp/threeDResultFail.jsp</file>
         </group>
+        <group name="NetBeans">
+            <file>file:/C:/Development/Workspaces/NetBeans/ipara-java/iParaJava.WebSamples/nbproject/build-impl.xml</file>
+        </group>
     </open-files>
 </project-private>

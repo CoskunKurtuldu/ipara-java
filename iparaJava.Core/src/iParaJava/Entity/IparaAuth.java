@@ -1,67 +1,59 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package iParaJava.Entity;
 
 import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
-
-
 /**
- *
  * @author fcoskun
+ * @refactoredby oaksoy
  */
+@XmlRootElement(name = "auth")
+public class IparaAuth {
 
-@XmlRootElement(name="auth")
-public class IparaAuth{ 
-              
-           @XmlElement(name="threeD")
-        public String ThreeD ;
+    @XmlElement(name = "threeD")
+    public String threeD;
 
-            @XmlElement(name="orderId")
-        public String OrderId ;
+    @XmlElement(name = "orderId")
+    public String orderId;
 
-            @XmlElement(name="amount")
-        public String Amount ;
-      
-            @XmlElement(name="echo")
-        public String Echo ;
+    @XmlElement(name = "amount")
+    public String amount;
 
-            @XmlElement(name="cardOwnerName")
-        public String CardOwnerName ;
+    @XmlElement(name = "echo")
+    public String echo;
 
-            @XmlElement(name="cardNumber")
-        public String CardNumber ;
+    @XmlElement(name = "cardOwnerName")
+    public String cardOwnerName;
 
-            @XmlElement(name="cardExpireMonth")
-        public String CardExpireMonth ;
+    @XmlElement(name = "cardNumber")
+    public String cardNumber;
 
-            @XmlElement(name="cardExpireYear")
-        public String CardExpireYear ;
+    @XmlElement(name = "cardExpireMonth")
+    public String cardExpireMonth;
 
-            @XmlElement(name="installment")
-        public String Installment ;
+    @XmlElement(name = "cardExpireYear")
+    public String cardExpireYear;
 
-            @XmlElement(name="cardCvc")
-        public String Cvc ;
+    @XmlElement(name = "installment")
+    public String installment;
 
-            @XmlElement(name="mode")
-        public String Mode ;
+    @XmlElement(name = "cardCvc")
+    public String cvc;
 
-            @XmlElement(name="vendorId")
-        public String VendorId ;
+    @XmlElement(name = "mode")
+    public String mode;
 
-            @XmlElement(name="threeDSecureCode")
-        public String ThreeDSecureCode ;
-  
-             @XmlElementWrapper             
-        @XmlElement(name="products")
-        public ArrayList<Product> Product ;
+    @XmlElement(name = "vendorId")
+    public String vendorId;
 
-            @XmlElement(name="purchaser")
-        public Purchaser Purchaser ;
+    @XmlElement(name = "threeDSecureCode")
+    public String threeDSecureCode;
+
+    @XmlElementWrapper(name = "products")
+    @XmlElement(name = "product")
+    public ArrayList<Product> products;
+
+    @XmlElement(name = "purchaser")
+    public Purchaser purchaser;
+
 }
