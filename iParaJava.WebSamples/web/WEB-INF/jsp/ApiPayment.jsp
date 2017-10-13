@@ -222,19 +222,19 @@
         apiPaymentRequest.purchaser.shippingAddress.country = "TR";
         apiPaymentRequest.purchaser.shippingAddress.phoneNumber = "2122222222";
 
-        apiPaymentRequest.products = new ArrayList<>();
-        Product p = new Product();
-        p.title = "Telefon";
-        p.code = "TLF0001";
-        p.price = "5000";
-        p.quantity = "1";
-        apiPaymentRequest.products.add(p);
-        p = new Product();
-        p.title = "Bilgisayar";
-        p.code = "BLG0001";
-        p.price = "5000";
-        p.quantity = "1";
-        apiPaymentRequest.products.add(p);
+        apiPaymentRequest.products = new ArrayList<Product>();
+        Product product1 = new Product();
+        product1.title = "Telefon";
+        product1.code = "TLF0001";
+        product1.price = "5000";
+        product1.quantity = "1";
+        apiPaymentRequest.products.add(product1);
+        Product product2 = new Product();
+        product2.title = "Bilgisayar";
+        product2.code = "BLG0001";
+        product2.price = "5000";
+        product2.quantity = "1";
+        apiPaymentRequest.products.add(product2);
 
         ApiPaymentResponse apiPaymentResponse = ApiPaymentRequest.execute(apiPaymentRequest, settings);
 

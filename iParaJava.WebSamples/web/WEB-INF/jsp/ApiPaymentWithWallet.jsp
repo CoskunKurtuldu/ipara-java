@@ -209,7 +209,7 @@
         apiPaymentRequest.purchaser.shippingAddress.country = "TR";
         apiPaymentRequest.purchaser.shippingAddress.phoneNumber = "2122222222";
 
-        apiPaymentRequest.products = new ArrayList<>();
+        apiPaymentRequest.products = new ArrayList<Product>();
         Product product1 = new Product();
         product1.title = "Telefon";
         product1.code = "TLF0001";
