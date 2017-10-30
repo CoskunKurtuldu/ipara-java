@@ -30,7 +30,7 @@
 
     settings.publicKey = ""; //"Public Magaza Anahtarı",
     settings.privateKey = ""; //"Private Magaza Anahtarı",
-    settings.baseUrl = "https://apitest.ipara.com/"; //Test için 
+    settings.baseUrl = "https://api.ipara.com/"; //Test için 
     settings.version = "1.0";
     settings.mode = "T"; // Test -> T / Prod -> P
     settings.hashString = "";
